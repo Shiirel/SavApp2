@@ -55,15 +55,19 @@
           </a>
         </li>
         <!-- Accès gestion des ingrédients pour l'administrateur -->
-        <li class="nav-item admin-only">
-          <a class="nav-link"
-             routerLink="ingredient-manager"
-             routerLinkActive="active"
-             title="Gérer les ingrédients (corps gras et agents alcalins)">
-            <i class="bi bi-collection-fill"> </i>
-            Ingrédients
-          </a>
-        </li>
+        @if (authService.isAuthenticated()) {
+          @if (authService.hasRole('ROLE_ADMIN')) {
+            <li class="nav-item admin-only">
+              <a class="nav-link"
+                routerLink="ingredients-manager"
+                routerLinkActive="active"
+                title="Gérer les ingrédients (corps gras et agents alcalins)">
+                <i class="bi bi-collection-fill"> </i>
+                Ingrédients
+              </a>
+            </li>
+          }
+        }
       </ul>
     </div>
   </div>
