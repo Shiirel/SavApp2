@@ -1,1 +1,9 @@
-<p>account-manager-page works!</p>
+<br><br>
+<div class="card border-success-subtle shadow">
+    <div class="card-header bg-success text-light fw-bold h5 ">
+      <i class="bi bi-flask-fill"></i> Informations Utilisateur
+    </div>
+<p><br>Username : {{ authService.getUserFullInfo()?.username }}</p>
+<p>Rôle : {{ authService.getUserFullInfo()?.roles }}</p>
+<p>Expiration session : {{ authService.getUserFullInfo()?.expiration }}</p>
+

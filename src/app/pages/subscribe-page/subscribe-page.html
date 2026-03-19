@@ -4,7 +4,7 @@
     <div class="col-md-4">
       <div class="card shadow">
         <div class="card-header bg-primary text-white text-center">
-          <h4>Connexion SavApp</h4>
+          <h4>Créer un compte SavApp</h4>
         </div>
         <div class="card-body">
           @if (errorMessage) {
@@ -14,24 +14,30 @@
           }
           <form (ngSubmit)="onSubmit()">
             <div class="mb-3">
-              <label class="form-label">Identifiant (Email)</label>
+              <label class="form-label">Username</label>
               <input type="text" name="username" class="form-control"
-                     [(ngModel)]="credentials.identifier" required>
+                     [(ngModel)]="id_inscription.username" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="text" name="username" class="form-control"
+                     [(ngModel)]="id_inscription.email" required>
             </div>
             <div class="mb-3">
               <label class="form-label">Mot de passe</label>
               <input type="password" name="password" class="form-control"
-                     [(ngModel)]="credentials.password" required>
+                     [(ngModel)]="id_inscription.password" required>
             </div>
             <button type="submit" class="btn btn-primary w-100">
-              Se connecter
+              Créer un compte
             </button>
           </form>
         </div>
         <div class="card-footer text-center small">
-          Pas encore de compte ? <a href="/subscribe">S'inscrire</a>
+          Déjà un compte ? <a href="/login">Se connecter</a>
         </div>
       </div>
     </div>
   </div>
 </div>
+

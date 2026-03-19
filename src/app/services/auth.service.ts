@@ -13,6 +13,16 @@ export class AuthService {
   
   constructor(private http: HttpClient) { }
   
+register(id_inscription : any):Observable<any> {
+  return this.http.post(`${this.API_URL}/register`, id_inscription).pipe(
+    tap((response: any) => {        
+        if (response.token) {
+          localStorage.setItem(this.TOKEN_KEY, response.token);
+          //this.isAuthenticated.set(true);
+        }
+    })
+  )
+}
   login(credential: any): Observable<any> {
     //console.log("Credential reçu :", credential);     
     return this.http.post(`${this.API_URL}/login`, credential).pipe(
