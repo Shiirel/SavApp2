@@ -48,7 +48,6 @@
   /* Pour changer la couleur au survol */
   a:hover {
     color: var(--green-charter); /* Change la couleur au survol */
-    text-decoration: underline; /* Ajoute un soulignement au survol si
-souhaité */
+    text-decoration: underline; /* Ajoute un soulignement au survol si souhaité */
   }
 }
