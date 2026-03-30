@@ -45,6 +45,8 @@
           </a>
         </li>
         <!-- Accès gestion des utilisateurs pour l'administrateur -->
+        @if (authService.isAuthenticated()) {
+          @if (authService.getUserFullInfo()?.roles == 'ROLE_ADMIN') {
         <li class="nav-item admin-only">
           <a class="nav-link"
              routerLink="users-manager"
@@ -54,9 +56,11 @@
             Utilisateurs
           </a>
         </li>
+      }
+    }
         <!-- Accès gestion des ingrédients pour l'administrateur -->
         @if (authService.isAuthenticated()) {
-          @if (authService.hasRole('ROLE_ADMIN')) {
+          @if (authService.getUserFullInfo()?.roles == 'ROLE_ADMIN') {
             <li class="nav-item admin-only">
               <a class="nav-link"
                 routerLink="ingredients-manager"
